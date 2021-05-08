@@ -1,23 +1,28 @@
-// const display = function showPhotos() {
-//     const image01 = document.getElementById('imageOne');
-//     const image02 = document.getElementById('imageTwo');
-// }
+let attempts = 0;
+const maxAttempts = 3;
+
+let guess = document.getElementById("guessingBox").value;
+const button = document.querySelector("#guessingButton");
+
+var computerNum = Math.floor(Math.random() * 10 + 1);
+
+console.log(computerNum)
 
 
-showPhotos();
-async function showPhotos() {
-    const response = await fetch('https://rickandmortyapi.com/api/character/');
-    const data = await response.json();
+button.addEventListener("click", e => {
+    e.preventDefault();
 
-    image1 = data.results[6].image
-    image2 = data.results[10].image
+    if (guess === computerNum) {
+        prompt("Congrats! You got it correct!");}
+    // } else if (guess <= computerNum){
+    //     alert(`You too high...`);
+    // } else if (guess >= computerNum){
+    //     alert(`You too low...`);
+    // }
 
-    console.log(image1)
-    console.log(image2)
-
-    const image01 = document.getElementById('imageOne');
-    const image02 = document.getElementById('imageTwo');
-
-    image01.src = image1;
-    image02.src = image2;
-}
+    // for (attempts = 0, attempts < 3, attempts++){
+    //     if (attempts < 3) {
+            
+    //     }
+    // }
+})
