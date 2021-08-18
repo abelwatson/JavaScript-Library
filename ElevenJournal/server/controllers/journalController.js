@@ -4,10 +4,6 @@ const validateJWT = require("../middleware/validate-jwt");
 // Import the Journal Model
 const { JournalModel } = require("../models");
 
-router.get('/practice', validateJWT, (req, res) => {
-    res.send('Hey!! This is a practice route!')
-});
-
 /*
 ==============
 Journal Create
@@ -136,9 +132,5 @@ router.delete("/delete/:id", validateJWT, async (req, res) => {
         res.status(500).json({ error: err });
     }
 });
-
-router.get('/about', (req, res) => {
-    res.send('This is a about route!')
-})
 
 module.exports = router;
